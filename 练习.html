@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+<style>
+#box{
+    position: relative;
+    min-height: 98px;
+    line-height: 27px;
+}
+.p{
+    height: 0px;
+    border-bottom: 1px solid #000;
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#div1{
+    width: 100%;
+    min-height: 98px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+</head>
+<body>
+	<div id="btnBox">
+	<input type="button" value="button_1" />
+    <input type="button" value="button_2" />
+    <input type="button" value="button_3" />
+    <input type="button" value="button_4" />
+    <input type="button" value="button_5" />
+</div>
+<div id="box">
+    <div contenteditable='true' id="div1"></div>
+    <p class="p"></p>
+    <p class="p"></p>
+    <p class="p"></p>
+    <p class="p"></p>
+</div>
+========================
+<hr>
+</body>
+<script>
+	var btnBox=document.getElementById('btnBox');
+    var inputs=btnBox.getElementsByTagName('input');
+    var l=inputs.length;
+    // for(var i=0;i<l;i++){
+	   //  inputs[i].onclick=function(){alert(i)}
+    // }
+
+    for (var i = 0; i < l; i++) {
+    	inputs[i].onclick=function (){
+    		for (var i = 0; i < l; i++) {
+    			if (inputs[i]==this) {
+    				alert(i);
+    			}; 
+    		};
+    	}
+    };
+    // var a=5&3;//转二进制再计算
+    // alert(a)//1
+
+
+
+    // function fun(){
+    //     this.a=0;
+    //     this.b=function(){
+    //         alert(this.a);
+    //     }
+    // }
+    // fun.prototype={
+    //     b:function(){
+    //         this.a=20;
+    //         alert(this.a);
+    //     },
+    //     c:function(){
+    //         this.a=30;
+    //         alert(this.a)
+    //     }
+    // }
+    // var my_fun=new fun();
+    // my_fun.b();//0
+    // my_fun.c();//30
+</script>
+</html>
